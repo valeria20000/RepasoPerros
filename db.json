@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "perros": [
+    {
+      "id": 1,
+      "nombre": "goku",
+      "raza": "Bulldog Frances",
+      "edad": 8,
+      "adopcion": true,
+      "img": "http://www.triamax.com/wp-content/uploads/2015/02/uvas.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "pilin",
+      "raza": "Yorsay",
+      "edad": 8,
+      "adopcion": true,
+      "img": "http://www.triamax.com/wp-content/uploads/2015/02/uvas.jpg"
+    },
+    {
+      "nombre": "werwer",
+      "raza": "wrwerwer",
+      "edad": 23,
+      "img": "https://images-na.ssl-images-amazon.com/images/I/61qiyxLyMwL._SX425_.jpg",
+      "adopcion": false,
+      "id": 3
+    }
+  ]
+}

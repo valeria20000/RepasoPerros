@@ -1,0 +1,70 @@
+<div class="container">
+    
+
+    <div class="row justify-content-center">
+   
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Crear Perro</h4>
+        <form class="form" [formGroup]="formulario" (ngSubmit)="sumitar()" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="nombre">Nombre</label>
+              <input type="text" formControlName="nombre" class="form-control"  placeholder="" />
+              <small *ngIf=" formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="form-text text-danger">Minimo 2 Letras y Maximo 100 Letras.</small>
+              <small *ngIf="formulario.controls.nombre.valid" class="form-text text-success" >Correcto</small>
+ 
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="raza">Raza</label>
+              <input type="text"  formControlName="raza"  class="form-control" placeholder="" />
+              <small *ngIf=" formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="form-text text-danger">Minimo 2 Letras y Maximo 100 Letras.</small>
+              <small *ngIf="formulario.controls.nombre.valid" class="form-text text-success" >Correcto</small>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="edad">Edad</label>
+                <input type="number" formControlName="edad" class="form-control"  placeholder=""  />
+              </div>
+            </div>
+
+          <div class="mb-3">
+            <label for="img">Imagen: </label>
+            <img src="{{formulario.controls.img.value}}" alt="imagen destacada" class="/" />
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">URL</span>
+              </div>
+              <input type="text" class="form-control"  formControlName="img"  placeholder="url imagen con extension png, jpg, jpeg"  />
+              <small *ngIf="formulario.controls.img.invalid && formulario.controls.img.touched" class="form-text text-danger"> Que empieze por Https o Http y la imagen con extension png, jpg, jpeg.</small>
+              <small *ngIf="formulario.controls.img.valid" class="form-text text-success" >Correcto</small>  
+            </div>
+          </div>
+
+        
+          <hr class="mb-4">
+
+          <h4 class="mb-3">Adopcion</h4>
+
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+              <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required />
+              <label class="custom-control-label" for="credit">Adoptado</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required />
+              <label class="custom-control-label" for="debit">No adoptado</label>
+            </div>
+          
+          </div>
+    
+
+  
+          <hr class="mb-4">
+          <input type="submit" [disabled]="formulario.status==='INVALID'" *ngIf="perro.id > 0" value="modificar"  class="btn btn-success" />
+          <input type="submit" [disabled]="formulario.status==='INVALID'" *ngIf="perro.id < 0" value="crear"  class="btn btn-success" />
+        </form>
+      </div>
+    </div>
+  </div>
